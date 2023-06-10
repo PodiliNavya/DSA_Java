@@ -1,0 +1,54 @@
+Implement a program to check whether the given number is prime or not.
+Input Format
+an integer value
+Constraints
+no
+Output Format
+true or false
+Sample Input 0
+3
+Sample Output 0
+true
+Sample Input 1
+6
+Sample Output 1
+false
+Sample Input 2
+7
+Sample Output 2
+true
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int i,m=0,flag=0;
+        int n=sc.nextInt();
+        m=n/2;
+        if(n==0||n==1){
+            System.out.println("false");
+        }
+        else
+        {
+            for(i=2;i<=m;i++){
+                if(n%i==0){
+                    System.out.println("false");
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0)
+            {
+                System.out.println("true");
+            }
+        }
+    }
+}
