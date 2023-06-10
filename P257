@@ -1,0 +1,75 @@
+Implement a program to swap two given rows.
+Input Format
+matrix and m and n values
+Constraints
+no
+Output Format
+modified matrix
+Sample Input 0
+1 2 3
+4 5 6
+7 8 9
+1
+2
+Sample Output 0
+4 5 6
+1 2 3
+7 8 9
+Sample Input 1
+1 0 0
+0 1 0
+0 0 1
+1
+2
+Sample Output 1
+0 1 0
+1 0 0
+0 0 1
+
+
+
+import java.util.Scanner;
+class Solution
+{
+    
+    public static void main(String[] args)
+    {
+        Scanner obj = new Scanner(System.in);
+        int n=3,m=3;
+        int a[][] = new int[n][m];
+        int i,j;
+       // System.out.println("Enter matrix elements:");
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                a[i][j] = obj.nextInt();
+            }
+        }
+        
+
+        //logic
+        int t;
+       // System.out.println("Enter row1 value to swap:");
+        int x = obj.nextInt();
+        //System.out.println("Enter row2 value to swap:");
+        int y = obj.nextInt();
+
+        for(i=0;i<n;i++)
+        {
+            t = a[x-1][i];
+            a[x-1][i] = a[y-1][i];
+            a[y-1][i] = t;
+        }
+
+       // System.out.println("Updated Matrix:A");
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
