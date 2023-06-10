@@ -1,0 +1,72 @@
+Implement a program to reverse each element in the matrix.
+Input Format
+A 3x3 matrix
+Constraints
+no
+Output Format
+result matrix
+Sample Input 0
+1 2 3
+4 5 6
+7 8 9
+Sample Output 0
+1 2 3
+4 5 6
+7 8 9
+Sample Input 1
+11 12 13
+14 15 16
+17 18 19
+Sample Output 1
+11 21 31
+41 51 61
+71 81 91
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    //public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         public static int[][] reverseElements(int[][] matrix) {
+        int[][] result = new int[matrix.length][matrix[0].length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                String element = String.valueOf(matrix[i][j]);
+                StringBuilder reversedElement = new StringBuilder(element).reverse();
+                result[i][j] = Integer.parseInt(reversedElement.toString());
+            }
+        }
+
+        return result;
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+        int[][] result = reverseElements(matrix);
+        printMatrix(result);
+
+        scanner.close();
+    }
+}
