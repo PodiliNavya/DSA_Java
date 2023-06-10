@@ -1,0 +1,44 @@
+Implement a program to read a string and print number of vowels present in string.
+Input Format
+string
+Constraints
+no
+Output Format
+number of vowels
+Sample Input 0
+hello
+Sample Output 0
+2
+Sample Input 1
+welcome
+Sample Output 1
+3
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+           Scanner scanner = new Scanner(System.in);
+        String inputString = scanner.nextLine();
+        int numVowels = countVowels(inputString);
+        System.out.println(numVowels);
+    }
+
+    public static int countVowels(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = Character.toLowerCase(str.charAt(i));
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                count++;
+            }
+        }
+        return count;
+        
+    }
+}
