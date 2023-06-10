@@ -1,0 +1,44 @@
+Create a function/method that takes two Strings and returns true of the first string ends with second string, otherwise return false.
+Input Format
+a string from the user
+Constraints
+no
+Output Format
+true or false
+Sample Input 0
+abc
+bc
+Sample Output 0
+true
+Sample Input 1
+abc
+d
+Sample Output 1
+false
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+   // public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    
+     public static boolean endsWith(String str1, String str2) {
+        return str1.endsWith(str2);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str1=sc.nextLine();
+        String str2=sc.nextLine();
+    
+        System.out.println(endsWith(str1, str2));    
+    }
+}
+
+
+    
