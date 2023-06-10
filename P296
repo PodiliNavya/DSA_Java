@@ -1,0 +1,39 @@
+create a method/function that takes a string as its argument and returns the string in reversed order.
+Input Format
+a string
+Constraints
+no
+Output Format
+reversed string
+Sample Input 0
+Hello Word
+Sample Output 0
+droW olleH
+Sample Input 1
+The quick brown fox
+Sample Output 1
+xof nworb kciuq ehT
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+   // public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         public static String reverseString(String str) {
+        StringBuilder reversed = new StringBuilder(str);
+        return reversed.reverse().toString();
+    }
+
+    public static void main(String[] args) { 
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        System.out.println(reverseString(str));
+
+    }
+}
+    
